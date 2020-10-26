@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_10_26_031702) do
     t.string "task"
     t.integer "month_id"
     t.string "priority"
-    t.integer "time"
+    t.string "length"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
