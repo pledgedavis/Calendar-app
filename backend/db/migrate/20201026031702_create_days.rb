@@ -3,9 +3,9 @@ class CreateDays < ActiveRecord::Migration[6.0]
     create_table :days do |t|
       t.string :name
       t.string :task
-      t.string :month_id
+      t.integer :month_id
       t.string :priority
-      t.string :time
+      t.integer :time
 
       t.timestamps
     end
