@@ -12,3 +12,6 @@ function fetchMonths(){
          console.log(json)
       });
       }
+    
+
+      
