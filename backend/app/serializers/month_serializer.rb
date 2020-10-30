@@ -1,3 +1,3 @@
 class MonthSerializer < ActiveModel::Serializer
-   attributes :name, :year
+   attributes :name, :year, :priority, :length 
 end
