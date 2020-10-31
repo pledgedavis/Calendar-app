@@ -8,7 +8,7 @@ class MonthsController < ApplicationController
     end
 
     def show 
-    render json:@month
+    render json: @month
     end 
 
     def create 
@@ -25,9 +25,9 @@ class MonthsController < ApplicationController
 
     def update 
       if @month.update(month_params)
-         render json:@month
+         render json: @month
       else
-        
+
       end 
     end
 

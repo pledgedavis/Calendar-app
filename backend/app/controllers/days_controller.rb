@@ -1,4 +1,5 @@
 class DaysController < ApplicationController
+    before_action :month_inst, only: [:show, :update, :destroy]
 
     def index
          days = Day.all
@@ -6,13 +7,16 @@ class DaysController < ApplicationController
     end
 
     def show
-        
+        render json: @day
     end
+    
 
-
-
-
-
+    def update 
+      if @day.update(day_params)
+         render json: @day
+      end
+    end
+     
 
 
     private 
