@@ -18,6 +18,7 @@ class DaysController < ApplicationController
     private 
 
   def day_inst
+     @day = Day.find(params[:id])
   end
 
   def day_params
