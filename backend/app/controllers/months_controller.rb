@@ -8,5 +8,16 @@ class MonthsController < ApplicationController
 
     def show 
      month = Month.find(params[:id]) 
+
     end 
+
+    def create 
+       month = Month.new(month_params)
+    end
+
+    private 
+
+    def month_params 
+     params.require(:month).permit(:name)
+    end
 end
