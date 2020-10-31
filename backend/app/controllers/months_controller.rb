@@ -23,13 +23,21 @@ class MonthsController < ApplicationController
          @month.destroy
     end 
 
+    def update 
+      if @month.update(month_params)
+         render json:@month
+      else
+        
+      end 
+    end
+
     private 
 
      def month_inst
         @month = Month.find(params[:id]) 
      end
 
-    def month_params 
-     params.require(:month).permit(:name)
-    end
+     def month_params 
+      params.require(:month).permit(:name)
+     end
 end
