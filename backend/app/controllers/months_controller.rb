@@ -13,6 +13,11 @@ class MonthsController < ApplicationController
 
     def create 
        month = Month.new(month_params)
+       if month.valid?
+        month.save
+        render json:month, status: :created, location: month  
+    
+      end
     end
 
     private 
