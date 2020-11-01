@@ -7,23 +7,16 @@ fetchMonths()
 
 
 function fetchMonths(){
-    fetch(`${BASE_URL}/month`)
+    fetch(`${BASE_URL}`)
     .then(response => response.json())
-       .then(m => {
-
-            m = new Month(month.id, month.name)
-            m.rendermonth();
-            
-          
-        
-      
-    })
-
+       .then(months =>{
+        for (let month of months){
+            let m = new Month(month.id, month.name)
+            m.renderMonth();    
+          }
+        })
 
     
-
-
-
     // function grabUsers() {
     //     fetch(`${BASE_URL}/users`)
     //     .then(res => res.json())
@@ -41,8 +34,9 @@ function fetchMonths(){
     //     Month.all.forEach(m => m.name)
     // }
 
-    const rendermonth = () => {
-        Month.all.forEach(m => m.name)
-    }
+    
+}
 
+const renderMonth = () => {
+    Month.all.forEach(m => m.name)
 }
