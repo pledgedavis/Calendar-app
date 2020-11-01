@@ -1,12 +1,12 @@
 const BASE_URL = "http://localhost:3000/months"
 
 document.addEventListener("DOMContentLoaded", () => {
-fetchMonths()
+fetchFormMonths()
 
 });
 
 
-function fetchMonths(){
+function fetchFormMonths(){
     fetch(`${BASE_URL}`)
     .then(response => response.json())
        .then(months =>{
