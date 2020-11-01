@@ -8,7 +8,7 @@ fetchMonths()
 
 function fetchMonths(){
     fetch(`${BASE_URL}/month`)
-    .then(function(response) {
+    .then(response => response.json())
        .then(months => {
         for (const month of months){
             let u = new Month(month.id, month.name)
@@ -16,8 +16,9 @@ function fetchMonths(){
             
           
         }
+      
     })
-
+    
 
     const rendermonth(){
         Month.all.forEach(m => m.name)
