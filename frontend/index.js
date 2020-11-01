@@ -7,7 +7,7 @@ fetchMonths()
 
 
 function fetchMonths(){
-    fetch("http://localhost:3000/months")
+    fetch(`${BASE_URL}/month`)
     .then(function(response) {
        .then(months => {
         for (const month of months){
@@ -18,3 +18,7 @@ function fetchMonths(){
         }
     })
 
+
+    const rendermonth(){
+        Month.all.forEach(m => m.name)
+    }
