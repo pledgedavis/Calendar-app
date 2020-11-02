@@ -1,4 +1,4 @@
-class Day {
+class Day{
     constructor(id, name, task, priority, length){
         this.id = id
         this.name = name;
@@ -27,7 +27,6 @@ let daysDiv = document.getElementById("days-container")
     </ul>
 </div>
 <button class="delete-bttn" data-id=${this.id} onclick="deleteDay()">Delete ${this.name}</button>
-// <button class="day-page-bttn" data-id=${this.id} onclick="deleteMonth()">Delete ${this.name}</button>
 
 `
 }
