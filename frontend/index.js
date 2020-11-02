@@ -33,9 +33,9 @@ function createDaysForm(){
     <form onsubmit="setTimeout(function)){window.location.reload();},10);">
          Day of week: <input type="text" id="name"><br><br>
          Task: <input type="text" id="task"><br><br>
-         month: <input type="month_id" id="month_id"><br>
-         priority: <input type="number" id="priority" style="width: 40px" min="1" max="12"> 
-      length: <input type="number" id="length" style="width: 40px" min="1" max="31"><br><br>
+         Month: <input type="month_id" id="month_id"><br><br>
+         Priority: <input type="number" id="priority"  40px" min="1" max="5"><br><br>
+      Number: <input type="number" id="number"  min="1" max="31"><br><br>
       <input type="submit" value="Create your activity"></input>
     </form>
     `
