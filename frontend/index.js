@@ -34,7 +34,7 @@ function createDaysForm(){
          Day of week: <input type="text" id="name"><br><br>
          Task: <input type="text" id="task"><br><br>
          Month: <input type="month_id" id="month_id"><br><br>
-         Priority: <input type="number" id="priority"  40px" min="1" max="5"><br><br>
+         Priority: <input type="number" id="priority" min="1" max="5"><br><br>
       Number: <input type="number" id="number"  min="1" max="31"><br><br>
       <input type="submit" value="Create your activity"></input>
     </form>
