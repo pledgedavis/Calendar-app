@@ -3,13 +3,21 @@ class DaysController < ApplicationController
 
     def index
          days = Day.all
-        render json: days
+        render json: days, include: [:months]
+      
     end
 
     def show
         render json: @day
     end
     
+    def create 
+        day = Day.new(day_params)
+        if day.valid?
+         day.save
+         render json:day, status: :created, location: day  
+       end
+     end
 
     def update 
       if @day.update(day_params)

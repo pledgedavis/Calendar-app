@@ -1,38 +1,39 @@
-const BASE_URL = "http://localhost:3000/months"
+const BASE_URL = "http://localhost:3000/days"
 
 document.addEventListener("DOMContentLoaded", () => {
-fetchMonths()
-createDaysForm()
+// fetchMonths()
 fetchDays()
+createDaysForm()
 });
 
 
-function fetchMonths(){
-    fetch(`${BASE_URL}`)
-    .then(response => response.json())
-       .then(months =>{
-        for (let month of months){
-            let m = new Month(month.id, month.name)
-            m.renderMonth();    
-          }
-        })
+// function fetchMonths(){
+//     fetch(`${BASE_URL}`)
+//     .then(response => response.json())
+//        .then(months =>{
+//         for (let month of months){
+//             let m = new Month(month.id, month.name)
+//             m.renderMonth();    
+//           }
+//         })
 
 
      
     
-    // const rendermonth(){
-    //     Month.all.forEach(m => m.name)
-    // }  
-}
+//     // const rendermonth(){
+//     //     Month.all.forEach(m => m.name)
+//     // }  
+// }
 
 
 
 function fetchDays(){
-    fetch('http://localhost:3000/days')
+    fetch(`${BASE_URL}`)
     .then(response => response.json())
        .then(days =>{
-        for (let day of days){
-            let d = new Day(day.id, day.name)
+        for (const day of days){
+            // debugger
+            let d = new Day(day.id, day.name, day.task, day.month_id, day.priority, day.length)
             d.renderDay();    
           }
         })
@@ -90,6 +91,11 @@ function daysFormSubmit(){
 }
 
 
-const renderMonth = () => {
-    Month.all.forEach(m => m.name)
-}
+// const renderDay = () => {
+//     Day.all.forEach(d => d.name, d.task, d.month, d.priority, d.number)
+// }
+
+
+// const renderMonth = () => {
+//     Month.all.forEach(m => m.name)
+// }
