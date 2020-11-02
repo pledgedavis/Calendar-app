@@ -7,14 +7,15 @@ class Day{
         this.length = length;
     }
 
-   
+    
 
 renderDay(){
    
 
 let daysDiv = document.getElementById("days-container")
-
+//   debugger
     daysDiv.innerHTML +=
+    
 `
 <div id="list-day" data-id=${this.id}>
   <hr>
@@ -22,9 +23,13 @@ let daysDiv = document.getElementById("days-container")
 <h3> ${this.name}'s activities: </h3>
     <ul>
     
-        <li> Day name: ${this.name} </li><br>
+        <li>  ${this.task} </li><br>
+        <li>  ${this.length} <</li><br>
         <div id="sign-container" data-id=${this.id}> </div>
+        
+       
     </ul>
+    <li>  ${this.priority} </li><br>
 </div>
 <button class="delete-bttn" data-id=${this.id} onclick="deleteDay()">Delete ${this.name}</button>
 

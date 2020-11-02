@@ -71,15 +71,16 @@ function daysFormSubmit(){
 
     let task = document.getElementById("task").value
 
-    let month_id = document.getElementById("month_id").value
-    
     let priority = document.getElementById("priority").value
 
-    let user = {
+    let length = document.getElementById("length").value
+    
+
+    let day = {
         name: name,
         task: task,
-        month_id: month_id,
         priority: priority,
+        length: length
     
 }
 }
