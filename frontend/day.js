@@ -26,5 +26,43 @@ class Day{
 //         <input type="submit" value="Find Your Zodiac Sign"></input>
 //       </form>
 
+
+
+renderDay(){
+    // let m = document.getElementById("month-dropdown")
+
+    // let optionValue = document.createElement("option")
+    //    let month = document.createTextNode(this.name);
+
+    //          optionValue.appendChild(month)
+    //          m.appendChild(optionValue)
+
+// }
+
+let daysDiv = document.getElementById("months-container")
+
+    daysDiv.innerHTML +=
+`
+<div id="list-day" data-id=${this.id}>
+  <hr>
+  <br>
+<h3> ${this.name}'s activities: </h3>
+    <ul>
     
+        <li> Day name: ${this.name} </li><br>
+        <div id="sign-container" data-id=${this.id}> </div>
+    </ul>
+</div>
+<button class="delete-bttn" data-id=${this.id} onclick="deleteDay()">Delete ${this.name}</button>
+// <button class="day-page-bttn" data-id=${this.id} onclick="deleteMonth()">Delete ${this.name}</button>
+
+`
 }
+};
+
+
+
+
+
+
+    

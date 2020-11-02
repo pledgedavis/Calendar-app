@@ -3,6 +3,7 @@ const BASE_URL = "http://localhost:3000/months"
 document.addEventListener("DOMContentLoaded", () => {
 fetchMonths()
 createDaysForm()
+fetchDays()
 });
 
 
@@ -23,6 +24,27 @@ function fetchMonths(){
     //     Month.all.forEach(m => m.name)
     // }  
 }
+
+
+
+function fetchDays(){
+    fetch('http://localhost:3000/days')
+    .then(response => response.json())
+       .then(days =>{
+        for (let day of days){
+            let d = new Day(day.id, day.name)
+            d.renderDay();    
+          }
+        })
+
+
+     
+    
+    // const rendermonth(){
+    //     Month.all.forEach(m => m.name)
+    // }  
+}
+
 
 
 function createDaysForm(){

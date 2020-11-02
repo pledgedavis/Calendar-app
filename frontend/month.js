@@ -20,7 +20,7 @@
         // }
 
         let monthsDiv = document.getElementById("months-container")
-
+   
         monthsDiv.innerHTML +=
         `
         <div id="list-month" data-id=${this.id}>
@@ -34,7 +34,10 @@
             </ul>
         </div>
         <button class="delete-bttn" data-id=${this.id} onclick="deleteMonth()">Delete ${this.name}</button>
-        <hr>`
+        // <button class="day-page-bttn" data-id=${this.id} onclick="">${this.name} page </button>
+      
+        `
+    
     }
     };
 
