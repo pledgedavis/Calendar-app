@@ -38,6 +38,6 @@ class MonthsController < ApplicationController
      end
 
      def month_params 
-      params.require(:month).permit(:name)
+      params.require(:month).permit(:name, :day_id)
      end
 end
