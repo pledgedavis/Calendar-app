@@ -13,7 +13,7 @@ function fetchMonths(){
        .then(months =>{
         for (let month of months){
             // debugger
-            let m = new Month(month.id, month.name)
+            let m = new Month(month.id, month.name, month.year)
           let renderedMonths = m.renderMonth();    
         //    renderedMonths.renderDay();
             
@@ -79,7 +79,21 @@ function daysFormSubmit(){
         name: name,
         task: task,
         priority: priority,
-        length: length
+        length: length,
+        month_id: month_id
     
+    }
+
+
+    fetch(`${BASE_URL}/days`,{
+             method: `POST`,
+             headers:{
+                 'Accept': 'application/json'
+             },
+             body: JSON.stringify(day)
+    })
+    
+
 }
-}
+
+

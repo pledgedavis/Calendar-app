@@ -24,9 +24,10 @@
         <div id="list-month" data-id=${this.id}>
           <hr>
           <br>
-        <h3> ${this.name}'s activities: </h3>
+        <h3> ${this.name}'s activities </h3>
+                <p><em>Year ${this.year}</em></p>
             <ul id=${this.id}'>
-                <li> Year: ${this.year}</li><br>
+                <li></li><br>
                 <div id="sign-container" data-id=${this.id}> </div>
             </ul>
         </div>
