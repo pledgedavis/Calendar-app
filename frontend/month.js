@@ -1,7 +1,8 @@
     class Month {
-        constructor(id, name){
+        constructor(id, name, year){
             this.id = id
             this.name = name;
+            this.year = year;
             // this.days = []
         }
         renderMonth(){
@@ -25,7 +26,7 @@
           <br>
         <h3> ${this.name}'s activities: </h3>
             <ul id=${this.id}'>
-                <li> </li><br>
+                <li> Year: ${this.year}</li><br>
                 <div id="sign-container" data-id=${this.id}> </div>
             </ul>
         </div>
