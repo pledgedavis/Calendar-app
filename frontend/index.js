@@ -92,7 +92,11 @@ function daysFormSubmit(){
              },
              body: JSON.stringify(day)
     })
-    
+    .then(resp => resp.json())
+    .then(day =>{
+        let d = new Day(day.id, day.name, day.task, day.month_id, day.priority, day.length)
+        d.renderDay();
+    })
 
 }
 
