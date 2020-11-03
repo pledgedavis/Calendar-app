@@ -5,7 +5,7 @@ class CreateDays < ActiveRecord::Migration[6.0]
       t.string :task
       t.string :priority
       t.string :length
-
+      t.integer :month_id
       t.timestamps
     end
   end

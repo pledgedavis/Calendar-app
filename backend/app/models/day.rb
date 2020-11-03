@@ -1,4 +1,4 @@
 class Day < ApplicationRecord
-    # belongs_to :month
-    has_many :months
+    belongs_to :month
+    # has_many :months
 end

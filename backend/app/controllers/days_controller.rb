@@ -36,6 +36,6 @@ class DaysController < ApplicationController
   end
 
   def day_params
-       params.require(:day).permit(:name, :task, :priority, :length)
+       params.require(:day).permit(:name, :task, :priority, :length, :month_id)
   end
 end

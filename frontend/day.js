@@ -24,19 +24,20 @@ let daysDiv = document.getElementById("days-container")
     <ul>
     
         <li>  ${this.task} </li><br>
-        <li>  ${this.length} <</li><br>
+         <li>  ${this.length} <</li><br>
         <div id="sign-container" data-id=${this.id}> </div>
         
        
     </ul>
-    <li>  ${this.priority} </li><br>
+    
 </div>
 <button class="delete-bttn" data-id=${this.id} onclick="deleteDay()">Delete ${this.name}</button>
 
 `
 }
-};
 
+};
+{/* <li>  ${this.priority} </li><br></br> */}
 
 
 

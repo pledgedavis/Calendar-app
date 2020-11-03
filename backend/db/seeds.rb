@@ -7,14 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Day.create(name: "Birthday", task: "Get ready for bday", priority: "High", length: "all-day")
-Day.create(name: "Christmas", task: "Get christmas tree", priority: "High", length: "all-day")
-Day.create(name: "Bill", task: "Need to pay rent", priority: "Very Important", length: "all-day")
-
-Month.create(name: "July", year: "2021", day_id: "1")
-Month.create(name: "December", year: "2021", day_id: "2")
-Month.create(name: "March", year: "2022", day_id: "3")
 
 
+Month.create(name: "July", year: "2021")
+Month.create(name: "December", year: "2021")
+Month.create(name: "March", year: "2022")
+
+
+Day.create(name: "Birthday", task: "Get ready for bday", priority: "High", length: "all-day", month_id: "1")
+Day.create(name: "Christmas", task: "Get christmas tree", priority: "High", length: "all-day", month_id: "2")
+Day.create(name: "Bill", task: "Need to pay rent", priority: "Very Important", length: "all-day", month_id: "3")
 
 

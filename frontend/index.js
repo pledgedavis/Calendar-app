@@ -1,29 +1,28 @@
 const BASE_URL = "http://localhost:3000"
 
 document.addEventListener("DOMContentLoaded", () => {
-// fetchMonths()
-fetchDays()
+fetchMonths()
+// fetchDays()
 // createDaysForm()
 });
 
 
-// function fetchMonths(){
-//     fetch(`${BASE_URL}`)
-//     .then(response => response.json())
-//        .then(months =>{
-//         for (let month of months){
-//             let m = new Month(month.id, month.name)
-//             m.renderMonth();    
-//           }
-//         })
+function fetchMonths(){
+    fetch(`${BASE_URL}/months`)
+    .then(response => response.json())
+       .then(months =>{
+        for (let month of months){
+            // debugger
+            let m = new Month(month.id, month.name)
+          let renderedMonths = m.renderMonth();    
+        //    renderedMonths.renderDay();
+            
+          }
+        })
+    }
 
 
      
-    
-//     // const rendermonth(){
-//     //     Month.all.forEach(m => m.name)
-//     // }  
-// }
 
 
 
@@ -84,13 +83,3 @@ function daysFormSubmit(){
     
 }
 }
-
-
-// const renderDay = () => {
-//     Day.all.forEach(d => d.name, d.task, d.month, d.priority, d.number)
-// }
-
-
-// const renderMonth = () => {
-//     Month.all.forEach(m => m.name)
-// }

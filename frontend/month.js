@@ -2,12 +2,8 @@
         constructor(id, name){
             this.id = id
             this.name = name;
+            // this.days = []
         }
-
-
-
-        
-
         renderMonth(){
             // let m = document.getElementById("month-dropdown")
      
@@ -20,6 +16,7 @@
         // }
 
         let monthsDiv = document.getElementById("months-container")
+        
    
         monthsDiv.innerHTML +=
         `
@@ -27,15 +24,12 @@
           <hr>
           <br>
         <h3> ${this.name}'s activities: </h3>
-            <ul>
-            
-                <li> Month name: ${this.name} </li><br>
+            <ul id=${this.id}'>
+                <li> </li><br>
                 <div id="sign-container" data-id=${this.id}> </div>
             </ul>
         </div>
         <button class="delete-bttn" data-id=${this.id} onclick="deleteMonth()">Delete ${this.name}</button>
-        // <button class="day-page-bttn" data-id=${this.id} onclick="">${this.name} page </button>
-      
         `
     
     }

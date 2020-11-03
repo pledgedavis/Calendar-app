@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_10_26_031702) do
     t.string "task"
     t.string "priority"
     t.string "length"
+    t.integer "month_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -24,7 +25,6 @@ ActiveRecord::Schema.define(version: 2020_10_26_031702) do
   create_table "months", force: :cascade do |t|
     t.string "name"
     t.integer "year"
-    t.integer "day_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

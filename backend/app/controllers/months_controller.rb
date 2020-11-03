@@ -3,7 +3,7 @@ class MonthsController < ApplicationController
 
     def index 
          months =  Month.all 
-         render json: months, include: [:day]
+         render json: months, include: [:days]
         #  line produces a specific set of data meaning the months and days including all of their attributes
     end
 
@@ -38,6 +38,6 @@ class MonthsController < ApplicationController
      end
 
      def month_params 
-      params.require(:month).permit(:name, :day_id)
+      params.require(:month).permit(:name)
      end
 end
