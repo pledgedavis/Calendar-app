@@ -46,17 +46,9 @@ function createDaysForm(){
          Task: <input type="text" id="task"><br><br>
          Priority: <input type="number" id="priority" min="1" max="5"><br><br>
          Length: <input type="text" id="length"><br><br>
-      Year: <input type="number" id="year"  min="2020" max="99999"><br><br>
-      
       Month: <select id="month_id" name="select-month><br><br>
-      
-
-      <option value="Month.create(name: "July")
-      Month.create(name: "December")
-      Month.create(name: "March")
-
-      <option value="">January</option>
-      <option value="">Febuary</option>
+      <option value="12">January</option>
+      <option value="11">Febuary</option>
       <option value="3">March</option>
       <option value="8">April</option>
       <option value="9">May</option>
