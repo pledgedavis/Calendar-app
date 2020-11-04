@@ -6,8 +6,12 @@ fetchMonths()
 createDaysForm()
 });
 
+
+
+
+
 function fetchMonths(){
-    fetch(`${BASE_URL}/months/${days.month_id}`)
+    fetch(`${BASE_URL}/months`)
     .then(response => response.json())
        .then(months =>{
         for (let month of months){
@@ -15,10 +19,12 @@ function fetchMonths(){
             let m = new Month(month.id, month.name, month.year)
           let renderedMonths = m.renderMonth();    
         //    renderedMonths.renderDay();
-            
           }
         })
     }
+    
+
+
 
 function fetchDays(){
     fetch(`${BASE_URL}/days`)
@@ -60,6 +66,7 @@ function createDaysForm(){
     </form>
     `
     daysDiv.addEventListener("submit", daysFormSubmit)
+
 }
 
 
@@ -98,6 +105,6 @@ function daysFormSubmit(){
 
 }
 
-// function monthsForm(){
+function monthsDay(day){
 
-// }
+}
