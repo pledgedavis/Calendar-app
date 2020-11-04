@@ -49,20 +49,23 @@ function createDaysForm(){
       Year: <input type="number" id="year"  min="2020" max="99999"><br><br>
       
       Month: <select id="month_id" name="select-month><br><br>
-      <option value="January">January</option>
+      
+
       <option value="Month.create(name: "July", year: "2021")
       Month.create(name: "December", year: "2021")
       Month.create(name: "March", year: "2022")
-      ">Febuary</option>
+
+      <option value="">January</option>
+      <option value="">Febuary</option>
       <option value="3">March</option>
-      <option value="April">April</option>
-      <option value="May">May</option>
-      <option value="June">June</option>
+      <option value="8">April</option>
+      <option value="9">May</option>
+      <option value="5">June</option>
       <option value="1">July</option>
-      <option value="August">August</option>
-      <option value="September">September</option>
-      <option value="October">October</option>
-      <option value="November">November</option>
+      <option value="4">August</option>
+      <option value="6">September</option>
+      <option value="7">October</option>
+      <option value="10">November</option>
       <option value="2">December</option> 
       <input type="submit" value="Create your activity"></input>
     </form>

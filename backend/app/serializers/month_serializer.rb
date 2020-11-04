@@ -1,6 +1,6 @@
 class MonthSerializer < ActiveModel::Serializer
     # include FastJsonapi::ObjectSerializer
  
-    attribute :name, :year
+    attribute :name
     has_many :days
 end

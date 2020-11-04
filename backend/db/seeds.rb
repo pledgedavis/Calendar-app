@@ -9,9 +9,9 @@
 
 
 
-Month.create(name: "July", year: "2021")
-Month.create(name: "December", year: "2021")
-Month.create(name: "March", year: "2022")
+Month.create(name: "July")
+Month.create(name: "December")
+Month.create(name: "March")
 Month.create(name: "August")
 Month.create(name: "June")
 Month.create(name: "September")
@@ -19,6 +19,9 @@ Month.create(name: "October")
 Month.create(name: "April")
 Month.create(name: "May")
 Month.create(name: "November")
+Month.create(name: "Febuary")
+Month.create(name: "January")
+
 
 
 
