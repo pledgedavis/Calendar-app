@@ -12,6 +12,14 @@
 Month.create(name: "July", year: "2021")
 Month.create(name: "December", year: "2021")
 Month.create(name: "March", year: "2022")
+Month.create(name: "August")
+Month.create(name: "June")
+Month.create(name: "September")
+Month.create(name: "October")
+Month.create(name: "April")
+Month.create(name: "May")
+Month.create(name: "November")
+
 
 
 Day.create(name: "Birthday", task: "Get ready for bday", priority: "High", length: "all-day", month_id: "1")

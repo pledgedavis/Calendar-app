@@ -1,3 +1,4 @@
+require 'pry'
 class DaysController < ApplicationController
     before_action :day_inst, only: [:show, :update, :destroy]
 
@@ -12,10 +13,11 @@ class DaysController < ApplicationController
     end
     
     def create 
+        # binding.pry
         day = Day.new(day_params)
         if day.valid?
          day.save
-         render json:day, status: :created, location: day  
+         render json: day, status: :created, location: day
        end
      end
 

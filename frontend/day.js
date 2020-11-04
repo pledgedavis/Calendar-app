@@ -1,10 +1,11 @@
 class Day{
-    constructor(id, name, task, priority, length){
+    constructor(id, name, task, priority, length, month_id){
         this.id = id
         this.name = name;
         this.task = task;
         this.priority = priority;
         this.length = length;
+        this.month_id = month_id
     }
 
     
@@ -24,7 +25,7 @@ let daysDiv = document.getElementById("days-container")
     <ul>
     
         <li>  ${this.task} </li><br>
-         <li>  ${this.length} <</li><br>
+         <li>  ${this.length} </li><br>
         <div id="sign-container" data-id=${this.id}> </div>
         
        
