@@ -51,9 +51,9 @@ function createDaysForm(){
       Month: <select id="month_id" name="select-month><br><br>
       
 
-      <option value="Month.create(name: "July", year: "2021")
-      Month.create(name: "December", year: "2021")
-      Month.create(name: "March", year: "2022")
+      <option value="Month.create(name: "July")
+      Month.create(name: "December")
+      Month.create(name: "March")
 
       <option value="">January</option>
       <option value="">Febuary</option>
