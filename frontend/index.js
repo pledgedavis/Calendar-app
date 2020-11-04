@@ -6,9 +6,8 @@ fetchMonths()
 createDaysForm()
 });
 
-
 function fetchMonths(){
-    fetch(`${BASE_URL}/months`)
+    fetch(`${BASE_URL}/months/${days.month_id}`)
     .then(response => response.json())
        .then(months =>{
         for (let month of months){
@@ -20,8 +19,6 @@ function fetchMonths(){
           }
         })
     }
-
-
 
 function fetchDays(){
     fetch(`${BASE_URL}/days`)
@@ -63,8 +60,6 @@ function createDaysForm(){
     </form>
     `
     daysDiv.addEventListener("submit", daysFormSubmit)
-
-  
 }
 
 
