@@ -12,7 +12,6 @@ class Day{
 
 renderDay(){
    
-
    let monthsDiv = document.getElementById("months-container").childNodes[1]
      let daysPtag = monthsDiv.getElementsByTagName('p')
 //   debugger

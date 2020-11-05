@@ -21,7 +21,7 @@
    
         monthsDiv.innerHTML +=
         `
-        <div id="list-month" data-id=${this.id}>
+        <div style="overflow:auto; width: 300px; height id="list-month" data-id=${this.id}>
           <hr>
           <br>
         <h3> ${this.name}'s activities </h3>
