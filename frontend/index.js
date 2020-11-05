@@ -105,6 +105,13 @@ function daysFormSubmit(){
 
 }
 
-function monthsDay(day){
+function monthsDay(day, month){
 
-}
+    if ((month.id ==  "12" || day.id == "12")){
+        return 
+    }
+    
+             
+ 
+
+  }

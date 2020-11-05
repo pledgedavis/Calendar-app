@@ -13,7 +13,7 @@ class Day{
 renderDay(){
    
 
-let daysDiv = document.getElementById("days-container")
+let daysDiv = document.getElementById("months-container").childNodes[0].text
 //   debugger
     daysDiv.innerHTML +=
     
@@ -22,6 +22,7 @@ let daysDiv = document.getElementById("days-container")
   <hr>
   <br>
 <h3> ${this.name}'s activities: </h3>
+     
     <ul>
     
         <li>  ${this.task} </li><br>
