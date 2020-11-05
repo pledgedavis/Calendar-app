@@ -26,7 +26,7 @@
           <br>
         <h3> ${this.name}'s activities </h3>
                 <p><em> ${this.day}</em></p>
-            <ul id=${this.id}'>
+            <ul id=${this.id}>
                 <li></li><br>
                 <div id="sign-container" data-id=${this.id}> </div>
             </ul>
