@@ -10,4 +10,12 @@
   
   }
 
-  
+  div {
+    color: black;
+    display:block;
+    float:left;
+    width:300px; 
+    height:150px; 
+    padding: 5px; 
+  }
+
