@@ -11,17 +11,16 @@ class Day{
     
 
 renderDay(){
-   
+//    debugger
    let monthsDiv = document.getElementById("months-container").childNodes[1]
-     let daysPtag = monthsDiv.getElementsByTagName('p')
-//   debugger
+     let daysPtag = monthsDiv.querySelector('p')
+  
     daysPtag.innerHTML +=
     
 `
 <div id="list-day" data-id=${this.id}>
-  <hr>
   <br>
-<h3> ${this.name}'s activities: </h3>
+<strong> ${this.name}'s activities: </strong>
      
     <ul>
     
@@ -36,12 +35,10 @@ renderDay(){
 <button class="delete-bttn" data-id=${this.id} onclick="deleteDay()">Delete ${this.name}</button>
 
 `
+
 }
 
 };
-{/* <li>  ${this.priority} </li><br></br> */}
-
-
 
 
 

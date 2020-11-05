@@ -1,9 +1,10 @@
 const BASE_URL = "http://localhost:3000"
 
 document.addEventListener("DOMContentLoaded", () => {
-fetchMonths()
-// fetchDays()
-createDaysForm()
+   
+    fetchMonths()
+   // fetchDays()
+   createDaysForm()
 });
 
 
@@ -41,10 +42,11 @@ function fetchDays(){
 
 function createDaysForm(){
     let daysDiv = document.getElementById("day-form")
+        
    
     daysDiv.innerHTML +=
     `
-    <form onsubmit="setTimeout(function)){window.location.reload();},10);">
+    <form>
          Day of week: <input type="text" id="name"><br><br>
          Task: <input type="text" id="task"><br><br>
          Priority: <input type="number" id="priority" min="1" max="5"><br><br>
@@ -65,7 +67,9 @@ function createDaysForm(){
       <input type="submit" value="Create your activity"></input>
     </form>
     `
-    daysDiv.addEventListener("submit", daysFormSubmit)
+     let daysDivForm = daysDiv.querySelector("form")
+     
+    daysDivForm.addEventListener("submit", daysFormSubmit)
 
 }
 
