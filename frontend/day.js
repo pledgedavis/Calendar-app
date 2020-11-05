@@ -13,9 +13,10 @@ class Day{
 renderDay(){
    
 
-let daysDiv = document.getElementById("months-container").childNodes[0].text
+    monthsDiv = document.getElementById("months-container").childNodes[1]
+     daysUl = monthsDiv.getElementsByTagName('p')
 //   debugger
-    daysDiv.innerHTML +=
+    daysUl.innerHTML +=
     
 `
 <div id="list-day" data-id=${this.id}>
