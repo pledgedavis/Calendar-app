@@ -4,7 +4,7 @@ class DaysController < ApplicationController
 
     def index
          days = Day.all
-        render json: days, include: [:months]
+        render json: days, include: [:month]
       
     end
 

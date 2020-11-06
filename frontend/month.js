@@ -1,8 +1,9 @@
     class Month {
-        constructor(id, name, year){
+        constructor(id, name, year, days){
             this.id = id;
             this.name = name;
             this.year = year;
+            this.days = days;
            
         }
         renderMonth(){
@@ -17,8 +18,8 @@
           <br>
               <strong> ${this.name}'s activities </strong>
              
-            <ul id=${this.id}  >
-                <li>   <p><em> ${this.day} </em> </p> </li><br>
+            <ul id=${this.id} data-link='${this.id}'  >
+                <li>   <p>  </p> </li><br>
                 <div id="days-container" data-id=${this.id}> </div>
             </ul>
         </div>
@@ -26,6 +27,28 @@
         `
     
     }
+
+
+
+    renderDays(){
+        // grab div for current month by data id 
+// inside of iteration create an elemnt then stick to months div 
+
+         for(const day of this.days ){
+         let ptag = document.createElement("P");
+           let renderedDay = ptag.innerHTML = day.name;
+         let  monthDiv = document.querySelector(`[data-link='${day.month_id}']`);
+             debugger
+                  
+             
+         }
+        
+
+
+    }
+
     };
 
+
+    
     
