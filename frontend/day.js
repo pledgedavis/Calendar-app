@@ -13,6 +13,8 @@ class Day{
 renderDay(){
 //    debugger
    let monthsDiv = document.getElementById("months-container").childNodes[1]
+          let monthsDivUl = monthsDiv.querySelector('ul')
+   debugger
      let daysPtag = monthsDiv.querySelector('p')
   
     daysPtag.innerHTML +=

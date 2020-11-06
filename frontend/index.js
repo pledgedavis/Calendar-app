@@ -3,7 +3,7 @@ const BASE_URL = "http://localhost:3000"
 document.addEventListener("DOMContentLoaded", () => {
    
     fetchMonths()
-   // fetchDays()
+   fetchDays()
    createDaysForm()
 });
 
@@ -28,8 +28,11 @@ function fetchMonths(){
 
 
 function fetchDays(){
-    fetch(`${BASE_URL}/days`)
+    // debugger
+    fetch(`${BASE_URL}/months`)
+    
     .then(response => response.json())
+    
        .then(days =>{
         for (const day of days){
             // debugger

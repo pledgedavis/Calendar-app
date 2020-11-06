@@ -1,3 +1,4 @@
+require'pry'
 class MonthsController < ApplicationController
     before_action :month_inst, only: [:show, :update, :destroy]
 

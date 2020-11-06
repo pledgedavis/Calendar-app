@@ -9,16 +9,16 @@
 
         let monthsDiv = document.getElementById("months-container")
         
-   
+        
         monthsDiv.innerHTML +=
         `
         <div id="list-month" data-id=${this.id}>
-         
+        
           <br>
               <strong> ${this.name}'s activities </strong>
-                <p><em> ${this.day}</em></p>
-            <ul id=${this.id}>
-                <li></li><br>
+             
+            <ul id=${this.id}  >
+                <li>   <p><em> ${this.day} </em> </p> </li><br>
                 <div id="days-container" data-id=${this.id}> </div>
             </ul>
         </div>
