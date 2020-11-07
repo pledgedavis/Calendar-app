@@ -33,12 +33,22 @@
     renderDays(){
         // grab div for current month by data id 
 // inside of iteration create an elemnt then stick to months div 
-
          for(const day of this.days ){
+            
          let ptag = document.createElement("P");
-           let renderedDay = ptag.innerHTML = day.name;
+                 ptag.innerHTML = day.name;
          let  monthDiv = document.querySelector(`[data-link='${day.month_id}']`);
-             debugger
+
+            //   monthDiv.appendChild(ptag)
+            monthDiv.innerHTML +=
+            `
+
+                    <li> <p> <br>${day.name} <br>
+                    ${day.task}<br>${day.length}<br></p></li>
+
+
+            `
+               debugger
                   
              
          }
