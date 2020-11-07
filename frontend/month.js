@@ -44,7 +44,7 @@
             `
                     <li> <p> <br>Day of the Week: <br>${day.name} <br><br>
                      Task:${day.task}<br><br> Length:${day.length}<br><br></p></li>
-                     <button class="delete-bttn" data-id=${day.id} onclick="deleteMonth()">Delete ${day.name}</button>
+                     <button class="delete-bttn" data-id=${day.id} onclick="deleteMonth()">Delete ${this.name}</button>
    
             `
             //    debugger

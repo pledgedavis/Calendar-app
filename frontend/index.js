@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchMonths()
 //    fetchDays()
    createDaysForm()
+   deleteDay()
 });
 
 
@@ -115,6 +116,25 @@ function daysFormSubmit(){
     })
 
 }
+
+
+
+function deleteDay() {
+    fetch(`${BASE_URL}/months`, {
+        method: 'DELETE', 
+        headers:{
+            'Content-Type': 'application/json',
+             'Accept': 'application/json'
+         },
+        
+    })
+    debugger
+    
+
+    
+}
+
+
 
 function monthsDay(day, month){
 
