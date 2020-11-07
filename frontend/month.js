@@ -19,7 +19,7 @@
               <strong> ${this.name}'s activities </strong>
              
             <ul id=${this.id} data-link='${this.id}'  >
-                <li>   <p>  </p> </li><br>
+               <p>  </p> <br>
                 <div id="days-container" data-id=${this.id}> </div>
             </ul>
         </div>
@@ -42,13 +42,11 @@
             //   monthDiv.appendChild(ptag)
             monthDiv.innerHTML +=
             `
-
-                    <li> <p> <br>${day.name} <br>
-                    ${day.task}<br>${day.length}<br></p></li>
-
+                    <li> <p> <br>Day of the Week: <br>${day.name} <br><br>
+                     Task:${day.task}<br><br> Length:${day.length}<br><br></p></li>
 
             `
-               debugger
+            //    debugger
                   
              
          }

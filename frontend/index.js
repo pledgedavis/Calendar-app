@@ -56,7 +56,8 @@ function createDaysForm(){
          Task: <input type="text" id="task"><br><br>
          Priority: <input type="number" id="priority" min="1" max="5"><br><br>
          Length: <input type="text" id="length"><br><br>
-      Month: <select id="month_id" name="select-month><br><br>
+      Month: <select id="month_id" >
+    //   name="select-month
       <option value="12">January</option>
       <option value="11">Febuary</option>
       <option value="3">March</option>
