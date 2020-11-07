@@ -28,7 +28,8 @@ class DaysController < ApplicationController
     end
 
     def destroy
-        @day.destroy 
+      # binding.pry
+        @day.destroy
     end
      
     private 

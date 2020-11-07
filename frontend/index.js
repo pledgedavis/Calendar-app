@@ -129,40 +129,39 @@ function daysFormSubmit(){
 
 
 
-// function deleteDay() {
-//      debugger
-    
-//     fetch(`${BASE_URL}/months/:id`, {
-//         method: 'DELETE',
-//         headers:{
-//             'Content-Type': 'application/json',
-//              'Accept': 'application/json'
-//              }
-//        })
-//        .then(resp => resp.json())
-//        .then(obj =>{
-//            debugger
-//        }
-            
-//        )
-
-
-
 
 function deleteDay(id){
-    // fetch(`${BASE_URL}/days/${id}`)
-    // debugger
+    
     fetch(`${BASE_URL}/days/${id}`, {method: "DELETE",
     headers:{
         'Content-Type': 'application/json',
          'Accept': 'application/json'
-     },
-
+       },
      })
     .then(res => res.text())
-    .then(() => location.reload())
-    .then(data => console.log(data))
-
+    .then(() => console.log("deleted"))
+    .then(() => window.location.reload({forcedReload:true}))
+     .catch(
+         err =>(console.log(err))
+     )
+     
+    // .then(() => window.location.reload(true))
+    // event.target.previousElementSibling.remove().repeat(2);
+    //    debugger
     // debugger
     // .then(() => window.href=`${BASE_URL}/days`)
+    
 }
+
+// function deleteMonth(id){
+//     fetch(`${BASE_URL}/months/${id}`, {method: "DELETE",
+//     headers:{
+//         'Content-Type': 'application/json',
+//          'Accept': 'application/json'
+//        },
+//      })
+//      .then(res => res.text())
+//      .then(data => console.log(data))
+//      .then(() => window.location.reload(true))
+//      event.target.previousElementSibling.remove().repeat(2);
+// }

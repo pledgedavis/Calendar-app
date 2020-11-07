@@ -20,9 +20,6 @@ class MonthsController < ApplicationController
       end
     end
 
-    def destroy
-         @month.destroy
-    end 
 
     def update 
       if @month.update(month_params)

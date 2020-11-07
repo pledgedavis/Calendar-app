@@ -29,13 +29,13 @@ renderDay(){
     
         <li>  ${this.task} </li><br>
          <li>  ${this.length} </li><br>
-        <div id="sign-container" data-id=${this.id}> </div>
+        <div id="days-container" data-id=${this.id}> </div>
         
        
     </ul>
     
 </div>
-<button class="delete-bttn" data-id=${this.id} onclick="deleteDay()">Delete ${this.name}</button>
+<button class="delete-bttn" data-id=${this.id} onclick="deleteDay(${this.id})">Delete ${this.name}</button>
 `
 
 }
