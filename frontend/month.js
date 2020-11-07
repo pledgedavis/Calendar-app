@@ -23,7 +23,7 @@
                 <div id="days-container" data-id=${this.id}> </div>
             </ul>
         </div>
-        <button class="delete-bttn" data-id=${this.id} onclick="deleteMonth()">Delete ${this.name}</button>
+        
         `
     
     }
@@ -44,7 +44,8 @@
             `
                     <li> <p> <br>Day of the Week: <br>${day.name} <br><br>
                      Task:${day.task}<br><br> Length:${day.length}<br><br></p></li>
-
+                     <button class="delete-bttn" data-id=${day.id} onclick="deleteMonth()">Delete ${day.name}</button>
+   
             `
             //    debugger
                   
