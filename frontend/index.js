@@ -1,11 +1,12 @@
 const BASE_URL = "http://localhost:3000"
 
+
 document.addEventListener("DOMContentLoaded", () => {
    
     fetchMonths()
 //    fetchDays()
    createDaysForm()
-   deleteDay()
+//    deleteDay()
 });
 
 
@@ -30,21 +31,21 @@ function fetchMonths(){
 
 
 
-function fetchDays(){
-    // debugger
-    fetch(`${BASE_URL}/days`)
+// function fetchDays(){
+//     // debugger
+//     fetch(`${BASE_URL}/days`)
     
-    .then(response => response.json())
+//     .then(response => response.json())
     
-       .then(days =>{
-        for (const day of days){
-            // debugger
-            let d = new Day(day.id, day.name, day.task, day.month_id, day.priority, day.length)
-            d.renderDay();    
-          }
-        })
+//        .then(days =>{
+//         for (const day of days){
+//             // debugger
+//             let d = new Day(day.id, day.name, day.task, day.month_id, day.priority, day.length)
+//             d.renderDay();    
+//           }
+//         })
 
-}
+// }
 
 function createDaysForm(){
     let daysDiv = document.getElementById("day-form")
@@ -119,30 +120,49 @@ function daysFormSubmit(){
 
 
 
-function deleteDay() {
-    fetch(`${BASE_URL}/months`, {
-        method: 'DELETE', 
-        headers:{
-            'Content-Type': 'application/json',
-             'Accept': 'application/json'
-         },
-        
-    })
-    debugger
-    
 
+
+
+
+
+
+
+
+
+// function deleteDay() {
+//      debugger
     
+//     fetch(`${BASE_URL}/months/:id`, {
+//         method: 'DELETE',
+//         headers:{
+//             'Content-Type': 'application/json',
+//              'Accept': 'application/json'
+//              }
+//        })
+//        .then(resp => resp.json())
+//        .then(obj =>{
+//            debugger
+//        }
+            
+//        )
+
+
+
+
+function deleteDay(id){
+    // fetch(`${BASE_URL}/days/${id}`)
+    // debugger
+    fetch(`${BASE_URL}/days/${id}`, {method: "DELETE",
+    headers:{
+        'Content-Type': 'application/json',
+         'Accept': 'application/json'
+     },
+
+     })
+    .then(res => res.text())
+    .then(() => location.reload())
+    .then(data => console.log(data))
+
+    // debugger
+    // .then(() => window.href=`${BASE_URL}/days`)
 }
-
-
-
-function monthsDay(day, month){
-
-    if ((month.id ==  "12" || day.id == "12")){
-        return 
-    }
-    
-             
- 
-
-  }

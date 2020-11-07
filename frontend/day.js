@@ -36,14 +36,8 @@ renderDay(){
     
 </div>
 <button class="delete-bttn" data-id=${this.id} onclick="deleteDay()">Delete ${this.name}</button>
-
 `
 
 }
 
 };
-
-
-
-
-    

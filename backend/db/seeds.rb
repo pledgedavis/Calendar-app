@@ -8,7 +8,6 @@
 
 
 
-
 Month.create(name: "July")
 Month.create(name: "December")
 Month.create(name: "March")
@@ -25,8 +24,6 @@ Month.create(name: "January")
 
 
 
-Day.create(name: "Birthday", task: "Get ready for bday", priority: "High", length: "all-day", month_id: "1")
-Day.create(name: "Christmas", task: "Get christmas tree", priority: "High", length: "all-day", month_id: "2")
-Day.create(name: "Bill", task: "Need to pay rent", priority: "Very Important", length: "all-day", month_id: "3")
-
-
+Day.create(name: "Monday", task: "Get ready for bday", priority: "High", length: "all-day", month_id: "1")
+Day.create(name: "Thursday", task: "Get christmas tree", priority: "High", length: "all-day", month_id: "2")
+Day.create(name: "Tuesday", task: "Need to pay rent", priority: "Very Important", length: "all-day", month_id: "3")
