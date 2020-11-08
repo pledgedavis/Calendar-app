@@ -10,34 +10,34 @@ class Day{
 
     
 
-renderDay(){
-//    debugger
-   let monthsDiv = document.getElementById("months-container").childNodes[1]
+   renderDay(){
+
+       let monthsDiv = document.getElementById("months-container").childNodes[1]
         //   let monthsDivUl = monthsDiv.querySelector('ul')
            let monthsDivUl = document.querySelector(`[data-link='${this.month_id}']`);
-//    debugger
-     let daysPtag = monthsDivUl.querySelector('p')
+     //    debugger
+      let daysPtag = monthsDivUl.querySelector('p')
         
-    daysPtag.innerHTML +=
+       daysPtag.innerHTML +=
     
-`
-<div id="list-day" data-id=${this.id}>
-  <br>
-<strong> ${this.name}'s activities: </strong>
+   `
+       <div id="list-day" data-id=${this.id}>
+       <br>
+      <strong> ${this.name}'s activities: </strong>
      
-    <ul>
+      <ul>
     
         <li>  ${this.task} </li><br>
          <li>  ${this.length} </li><br>
         <div id="days-container" data-id=${this.id}> </div>
         
        
-    </ul>
+       </ul>
     
-</div>
-<button class="delete-bttn" data-id=${this.id} onclick="deleteDay(${this.id})">Delete ${this.name}</button>
-`
+      </div>
+      <button class="delete-bttn" data-id=${this.id} onclick="deleteDay(${this.id})">Delete ${this.name}</button>
+    `
 
-}
+   }
 
 };

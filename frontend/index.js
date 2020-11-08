@@ -4,9 +4,7 @@ const BASE_URL = "http://localhost:3000"
 document.addEventListener("DOMContentLoaded", () => {
    
     fetchMonths()
-//    fetchDays()
    createDaysForm()
-//    deleteDay()
 });
 
 
@@ -22,30 +20,11 @@ function fetchMonths(){
             let m = new Month(month.id, month.name, month.year, month.days)
           let renderedMonths = m.renderMonth();    
                   let renderedDayss= m.renderDays()   
-
-             
           }
         })
     }
     
 
-
-
-// function fetchDays(){
-//     // debugger
-//     fetch(`${BASE_URL}/days`)
-    
-//     .then(response => response.json())
-    
-//        .then(days =>{
-//         for (const day of days){
-//             // debugger
-//             let d = new Day(day.id, day.name, day.task, day.month_id, day.priority, day.length)
-//             d.renderDay();    
-//           }
-//         })
-
-// }
 
 function createDaysForm(){
     let daysDiv = document.getElementById("day-form")
@@ -121,15 +100,6 @@ function daysFormSubmit(){
 
 
 
-
-
-
-
-
-
-
-
-
 function deleteDay(id){
     
     fetch(`${BASE_URL}/days/${id}`, {method: "DELETE",
@@ -144,24 +114,5 @@ function deleteDay(id){
      .catch(
          err =>(console.log(err))
      )
-     
-    // .then(() => window.location.reload(true))
-    // event.target.previousElementSibling.remove().repeat(2);
-    //    debugger
-    // debugger
-    // .then(() => window.href=`${BASE_URL}/days`)
-    
+      
 }
-
-// function deleteMonth(id){
-//     fetch(`${BASE_URL}/months/${id}`, {method: "DELETE",
-//     headers:{
-//         'Content-Type': 'application/json',
-//          'Accept': 'application/json'
-//        },
-//      })
-//      .then(res => res.text())
-//      .then(data => console.log(data))
-//      .then(() => window.location.reload(true))
-//      event.target.previousElementSibling.remove().repeat(2);
-// }

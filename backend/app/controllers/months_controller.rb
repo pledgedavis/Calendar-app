@@ -1,6 +1,6 @@
 require'pry'
 class MonthsController < ApplicationController
-    before_action :month_inst, only: [:show, :update, :destroy]
+    before_action :month_inst, only: [:show, :destroy]
 
     def index 
          months =  Month.all 
@@ -20,14 +20,6 @@ class MonthsController < ApplicationController
       end
     end
 
-
-    def update 
-      if @month.update(month_params)
-         render json: @month
-      else
-
-      end 
-    end
 
     private 
 
