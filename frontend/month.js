@@ -7,7 +7,7 @@ class Month {
        
     }
 
-    
+
     renderMonth(){
 
       let monthsDiv = document.getElementById("months-container")
@@ -42,7 +42,8 @@ class Month {
            monthDiv.innerHTML +=
           `
                  <li> <p> <br>Day of the Week: <br>${day.name} <br><br>
-                   Task:${day.task}<br><br> Length:${day.length}<br><br></p></li>
+                   Task:${day.task}<br><br> Length:${day.length}<br><br>
+                     Priority:${day.priority}<br><br></p></li>
                   <button class="delete-bttn" data-id=${day.id} onclick="deleteDay(${day.id})">Delete ${day.name}</button>
     
           `     

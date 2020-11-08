@@ -21,6 +21,7 @@ class Day{
        daysPtag.innerHTML +=
     
    `
+     <hr>
        <div id="list-day" data-id=${this.id}>
        <br>
       <strong> ${this.name}'s activities: </strong>
@@ -29,6 +30,7 @@ class Day{
     
         <li>  ${this.task} </li><br>
          <li>  ${this.length} </li><br>
+         <li>  ${this.priority} </li><br>
         <div id="days-container" data-id=${this.id}> </div>
         
        
@@ -36,6 +38,7 @@ class Day{
     
       </div>
       <button class="delete-bttn" data-id=${this.id} onclick="deleteDay(${this.id})">Delete ${this.name}</button>
+      <hr>
     `
 
    }
