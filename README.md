@@ -1,7 +1,17 @@
 # README
+# Calendar App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to my Calendar App's Readme to start using my app follow the instructions below..
+
+Installation
+
+Clone the repository
+
+To get started you will first have to clone this github repository
+
+
+
+
 
 Things you may want to cover:
 
