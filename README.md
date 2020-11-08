@@ -5,7 +5,7 @@ Welcome to my Calendar App's Readme to start using my app follow the instruction
 
 ## Installation ##
 
-## Clone the repository ##
+### Clone the repository ###
 
 To get started you will first have to clone this github repository
 @https://github.com/pledgedavis/Calendar-app.git and run git clone https://github.com/pledgedavis/Calendar-app.git in your local environments terminal.
@@ -14,19 +14,19 @@ Then you will cd into the correct directory then when 'Calendar-app' is visible 
 
 # Backend Terminal #
 
-## Install dependencies ##
+### Install dependencies ###
 Run 'bundle install' and or 'bundle update' to update dependencies 
 
-## Initialize the database ##
+### Initialize the database ###
 Run 'rails db::create' `rails db:migrate' 'rails db:seed'
 
-## Run local server ##
+### Run local server ###
 
 While in the backend run 'rails s' to get the rails server started 
 
 # Frontend Terminal # 
 
-## Open File ##
+### Open File ###
 
 While inisde of the Frontends directory run 'open index.html' to get to the Calendars app homepage.
 
