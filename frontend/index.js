@@ -202,76 +202,111 @@ function filterForm(){
 
 
 
-// function displayDays(days = selectedMonth.days){
-//   event.preventDefault();
-//   debugger
-// filterFormSubmit()
-//   if (days != "undefined"){
+function displayDays(days = selectedMonth.days){
+  event.preventDefault();
+  debugger
+filterFormSubmit()
+  if (days != "undefined"){
    
-//     days.forEach(function(day){
-//       console.log(day)
-//       return day
-//   //  debugger
-//     })
+    days.forEach(function(day){
+      console.log(day)
+      return day
+  //  debugger
+    })
   
-//   }
-//    else{
-//         return "No activities here yet"
-//    }
+  }
+   else{
+        return "No activities here yet"
+   }
 
   
-// }
+}
 
 
-// function filterFormSubmit(){
+function filterFormSubmit(){
  
-//   event.preventDefault();
-//   // debugger
-//   monthsCont = document.getElementById("months-container")
-//    month_id = document.getElementById("month_name").value
+  event.preventDefault();
+  // debugger
+  // monthsCont = document.getElementById("months-container")
+   month_id = document.getElementById("month_name").value
   
-//    if((month_id == 1)){
-//     //  debugger
-//     selectedMonth = appState[0]
-//    return selectedMonth
-//    }  else if ((month_id == 2)){
-//     selectedMonth = appState[1]
-//     return selectedMonth
-//    }
-//    else if ((month_id == 3)){
-//     selectedMonth = appState[2]
-//     return selectedMonth
-//   }else if ((month_id == 4)){
-//     selectedMonth = appState[3]
-//     return selectedMonth
-//   }else if ((month_id == 5)){
-//     selectedMonth = appState[4]
-//    return selectedMonth
-//   }else if ((month_id == 6)){
-//     selectedMonth = appState[5]
-//     return selectedMonth
-//   }else if ((month_id == 7)){
-//     selectedMonth = appState[6]
-//    return selectedMonth
-//   }else if ((month_id == 8)){
-//     selectedMonth = appState[7]
-//    return selectedMonth
-//   }else if ((month_id == 9)){
-//     selectedMonth = appState[8]
-//    return selectedMonth
-//   }else if ((month_id == 10)){
-//     selectedMonth = appState[9]
-//    return selectedMonth
-//   }else if ((month_id == 11)){
-//     selectedMonth = appState[10]
-//    return selectedMonth
-//   }else if ((month_id == 12)){
-//     selectedMonth = appState[11]
-//    return selectedMonth
-//   }
+   if((month_id == 1)){
+    //  debugger
+    selectedMonth = appState[0]
+   return selectedMonth
+   }  else if ((month_id == 2)){
+    selectedMonth = appState[1]
+    return selectedMonth
+   }
+   else if ((month_id == 3)){
+    selectedMonth = appState[2]
+    return selectedMonth
+  }else if ((month_id == 4)){
+    selectedMonth = appState[3]
+    return selectedMonth
+  }else if ((month_id == 5)){
+    selectedMonth = appState[4]
+   return selectedMonth
+  }else if ((month_id == 6)){
+    selectedMonth = appState[5]
+    return selectedMonth
+  }else if ((month_id == 7)){
+    selectedMonth = appState[6]
+   return selectedMonth
+  }else if ((month_id == 8)){
+    selectedMonth = appState[7]
+   return selectedMonth
+  }else if ((month_id == 9)){
+    selectedMonth = appState[8]
+   return selectedMonth
+  }else if ((month_id == 10)){
+    selectedMonth = appState[9]
+   return selectedMonth
+  }else if ((month_id == 11)){
+    selectedMonth = appState[10]
+   return selectedMonth
+  }else if ((month_id == 12)){
+    selectedMonth = appState[11]
+   return selectedMonth
+  }
 
-// }
+}
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //   event.preventDefault();
 
 //   let name = document.getElementById("name").value
