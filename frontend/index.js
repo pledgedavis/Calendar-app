@@ -201,13 +201,14 @@ function displayDays(){
   event.preventDefault();
   monthContainer = document.getElementById("months-container")
 filterFormSubmit()
-
+       
     monthContainer.innerHTML =`
             <h2><strong>${selectedMonth.name}'s activities</strong></h2>
             <hr>
           `
+      document.getElementById("day-form").style.visibility = "hidden";
   if (selectedMonth.days.length > 0){
-    // debugger
+    
     selectedMonth.days.forEach(function(day){
       monthContainer.innerHTML += `<p> ${day.name} </p><br><p> Task:  ${day.task} <p><br>
       <p> Length:  ${day.length} </p><br>
@@ -366,55 +367,6 @@ function filterFormSubmit(){
 // //    debugger
 
 // // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
