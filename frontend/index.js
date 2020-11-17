@@ -182,19 +182,18 @@ function filterForm(){
   displayDays()
   debugger
   // monthContainer.querySelector("div")
-  monthContainer = document.getElementById("months-container")
+   monthContainer = document.getElementById("months-container")
+
 
   debugger
-       monthContainer.innerHTML =`
+       monthContainer.innerHTML +=`
   
    
-    <strong>${selectedMonth.name}'s activities</strong>
-     <p>${selectedMonth.days[0].name}</p>  <p>${selectedMonth.days[1].name}</p>
-  
+    <h3><strong>${selectedMonth.name}'s activities</strong><h3>
+    
    `
+  //  <p>${selectedMonth.days[0].name}</p>  <p>${selectedMonth.days[1].name}</p>
 // debugger
- 
-
  });
 
 
@@ -204,13 +203,14 @@ function filterForm(){
 
 function displayDays(days = selectedMonth.days){
   event.preventDefault();
-  debugger
+  // debugger
+  monthContainer = document.getElementById("months-container")
+
 filterFormSubmit()
   if (days != "undefined"){
    
     days.forEach(function(day){
-      console.log(day)
-      return day
+      monthContainer.innerHTML = `${day.name}`
   //  debugger
     })
   
