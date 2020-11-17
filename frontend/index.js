@@ -187,7 +187,7 @@ function filterForm(){
    monthContainer = document.getElementById("months-container")
 
 
-  debugger
+  // debugger
       
   //  <p>${selectedMonth.days[0].name}</p>  <p>${selectedMonth.days[1].name}</p>
 // debugger
@@ -203,27 +203,27 @@ function displayDays(){
 filterFormSubmit()
 
     monthContainer.innerHTML =`
-            <ul><strong>${selectedMonth.name}'s activities</strong></ul>
+            <h2><strong>${selectedMonth.name}'s activities</strong></h2>
             <hr>
           `
   if (selectedMonth.days.length > 0){
     // debugger
     selectedMonth.days.forEach(function(day){
-      monthContainer.innerHTML += `<p>${day.name} </p><br><p> Task:${day.task} <p><br>
+      monthContainer.innerHTML += `<p> ${day.name} </p><br><p> Task:  ${day.task} <p><br>
       <p> Length:  ${day.length} </p><br>
       <p>  Priority: ${day.priority} </p><br>
       <hr>
       `
   //  debugger
     })
-    debugger
+    // debugger
   }
-   else if (selectedMonth.days.length < 0) {
-     debugger
-    location.reload();
-    filterForm()
-       monthContainer.innerHTML = `<p>No days yet!</p>`
-        
+   else{
+    //  debugger
+    
+       monthContainer.innerHTML = `
+       <h2>${selectedMonth.name}</h2>
+       <Strong>No days for ${selectedMonth.name} yet!</strong><br>`
    }
 
   
