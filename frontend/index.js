@@ -204,11 +204,16 @@ filterFormSubmit()
 
     monthContainer.innerHTML =`
             <ul><strong>${selectedMonth.name}'s activities</strong></ul>
+            <hr>
           `
   if (selectedMonth.days.length > 0){
     // debugger
     selectedMonth.days.forEach(function(day){
-      monthContainer.innerHTML += `<li>${day.name}</li>`
+      monthContainer.innerHTML += `<p>${day.name} </p><br><p> Task:${day.task} <p><br>
+      <p> Length:  ${day.length} </p><br>
+      <p>  Priority: ${day.priority} </p><br>
+      <hr>
+      `
   //  debugger
     })
     debugger
