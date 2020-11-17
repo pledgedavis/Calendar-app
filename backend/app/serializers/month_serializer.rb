@@ -4,3 +4,8 @@ class MonthSerializer < ActiveModel::Serializer
     attribute :name
     has_many :days
 end
+
+
+
+
+

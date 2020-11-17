@@ -1,8 +1,7 @@
 class Month {
-    constructor(id, name, year, days){
+    constructor(id, name, days){
         this.id = id;
         this.name = name;
-        this.year = year;
         this.days = days;
        
     }
@@ -11,7 +10,7 @@ class Month {
     renderMonth(){
 
       let monthsDiv = document.getElementById("months-container")
-    
+  
     
       monthsDiv.innerHTML +=
       `
@@ -28,6 +27,7 @@ class Month {
     
       `
     }
+
   
   
     renderDays(){
@@ -36,7 +36,9 @@ class Month {
       for(const day of this.days ){
        
          let ptag = document.createElement("P");
+          
                ptag.innerHTML = day.name;
+              //  sets ptags innerhtml to .name
         let  monthDiv = document.querySelector(`[data-link='${day.month_id}']`);
            //   monthDiv.appendChild(ptag)
            monthDiv.innerHTML +=

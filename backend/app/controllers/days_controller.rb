@@ -2,10 +2,10 @@ require 'pry'
 class DaysController < ApplicationController
     before_action :day_inst, only: [:show, :destroy]
 
+    
     def index
          days = Day.all
         render json: days, include: [:month]
-      
     end
 
     def show
