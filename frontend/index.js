@@ -163,6 +163,8 @@ function filterForm(){
   <option value="10">October</option>
   <option value="11">November</option>
   <option value="12">December</option> 
+  <option value="13">All Months</option> 
+  
   <input type="button" id="newbttn" value="Filter by month"></input>
 
   </form>
@@ -180,16 +182,14 @@ function filterForm(){
  input.addEventListener("click", function() {
   filterFormSubmit()
   displayDays()
-  debugger
+  // debugger
   // monthContainer.querySelector("div")
    monthContainer = document.getElementById("months-container")
 
 
   debugger
        monthContainer.innerHTML +=`
-  
-   
-    <h3><strong>${selectedMonth.name}'s activities</strong><h3>
+    <ul><strong>${selectedMonth.name}'s activities</strong></ul>
     
    `
   //  <p>${selectedMonth.days[0].name}</p>  <p>${selectedMonth.days[1].name}</p>
@@ -201,22 +201,26 @@ function filterForm(){
 
 
 
-function displayDays(days = selectedMonth.days){
+function displayDays(){
   event.preventDefault();
   // debugger
   monthContainer = document.getElementById("months-container")
 
 filterFormSubmit()
-  if (days != "undefined"){
-   
-    days.forEach(function(day){
-      monthContainer.innerHTML = `${day.name}`
+  if (selectedMonth.days.length > 0){
+    // debugger
+    selectedMonth.days.forEach(function(day){
+      monthContainer.innerHTML = `<li>${day.name}</li>`
   //  debugger
     })
-  
+    debugger
   }
-   else{
-        return "No activities here yet"
+   else if (selectedMonth.days.length < 0) {
+     debugger
+    location.reload();
+    filterForm()
+       monthContainer.innerHTML = `<p>No days yet!</p>`
+        
    }
 
   
@@ -268,6 +272,9 @@ function filterFormSubmit(){
   }else if ((month_id == 12)){
     selectedMonth = appState[11]
    return selectedMonth
+  }
+  else if ((month_id == 13)){
+   return location.reload();
   }
 
 }
