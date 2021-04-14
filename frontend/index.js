@@ -34,7 +34,7 @@ function createDaysForm(){
     daysDiv.innerHTML += `
     <form>
          Day of week: <input type="text" id="name"><br><br>
-          Day number: <input type="number" id="priority" min="1" max="5"><br><br>
+          Day number: <input type="number" id="priority" min="1" max="30"><br><br>
          Task: <input type="text" id="task"><br><br>
          Priority: <input type="number" id="priority" min="1" max="5"><br><br>
          Length: <input type="text" id="length"><br><br>
@@ -67,6 +67,7 @@ function daysFormSubmit(){
     event.preventDefault();
 
     let name = document.getElementById("name").value
+    let day_number = document.getElementById("day_number").value;
     let task = document.getElementById("task").value
     let priority = document.getElementById("priority").value
     let length = document.getElementById("length").value
@@ -211,11 +212,11 @@ filterFormSubmit()
   if (selectedMonth.days.length > 0){
     
     selectedMonth.days.forEach(function(day){
-      monthContainer.innerHTML += `<p> ${day.name} </p><br><p> Task:  ${day.task} <p><br>
+      monthContainer.innerHTML += `<p> ${day.name} </p><br>  the <p>${day.day_number} </p><br><p> Task:  ${day.task} <p><br>
       <p> Length:  ${day.length} </p><br>
       <p>  Priority: ${day.priority} </p><br>
       <hr>
-      `
+      `;
   //  debugger
     })
     // debugger
