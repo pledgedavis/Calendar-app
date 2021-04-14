@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2020_10_26_031702) do
 
   create_table "days", force: :cascade do |t|
     t.string "name"
+    t.integer "day_number"
     t.string "task"
     t.string "priority"
     t.string "length"
