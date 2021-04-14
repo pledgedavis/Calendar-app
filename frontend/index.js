@@ -31,10 +31,10 @@ function fetchMonths(){
 function createDaysForm(){
     let daysDiv = document.getElementById("day-form")
         
-    daysDiv.innerHTML +=
-    `
+    daysDiv.innerHTML += `
     <form>
          Day of week: <input type="text" id="name"><br><br>
+          Day number: <input type="number" id="priority" min="1" max="5"><br><br>
          Task: <input type="text" id="task"><br><br>
          Priority: <input type="number" id="priority" min="1" max="5"><br><br>
          Length: <input type="text" id="length"><br><br>
@@ -54,7 +54,7 @@ function createDaysForm(){
       <option value="12">December</option> 
       <input type="submit" value="Create your activity"></input>
     </form>
-    `
+    `;
      let daysDivForm = daysDiv.querySelector("form")
      
     daysDivForm.addEventListener("submit", daysFormSubmit)
@@ -75,6 +75,7 @@ function daysFormSubmit(){
     // debugger
     let day = {
         name: name,
+        day_number: day_number,
         task: task,
         priority: priority,
         length: length,
@@ -93,7 +94,7 @@ function daysFormSubmit(){
     .then(resp => resp.json())
     .then(day =>{
         
-        let d = new Day(day.id, day.name, day.task, day.priority, day.length, day.month_id)
+        let d = new Day(day.id, day.name, day.day_number, day.task, day.priority, day.length, day.month_id)
            d.renderDay();
     })
 
