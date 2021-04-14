@@ -23,6 +23,6 @@ Month.create(name: "December")
 
 
 
-Day.create(name: "Monday", task: "Get ready for bday", priority: "5", length: "all-day", month_id: "1")
-Day.create(name: "Thursday", task: "Get christmas tree", priority: "5", length: "all-day", month_id: "2")
-Day.create(name: "Tuesday", task: "Need to pay rent", priority: "5", length: "all-day", month_id: "3")
+Day.create(name: "Monday", day_number: "1", task: "Get ready for bday", priority: "5", length: "all-day", month_id: "1")
+Day.create(name: "Thursday", day_number: "10", task: "Get christmas tree", priority: "5", length: "all-day", month_id: "2")
+Day.create(name: "Tuesday",  day_number: "5", task: "Need to pay rent", priority: "5", length: "all-day", month_id: "3")
