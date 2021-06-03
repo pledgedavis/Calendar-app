@@ -1,40 +1,35 @@
-const BASE_URL = "http://localhost:3000"
-let appState = []
+const BASE_URL = "http://localhost:3000";
+let appState = [];
 
 document.addEventListener("DOMContentLoaded", () => {
-    // marks when dom is ready^
-    fetchMonths()
-   createDaysForm()
-   filterForm()
+  // marks when dom is ready^
+  fetchMonths();
+  createDaysForm();
+  filterForm();
 });
 
-
-function fetchMonths(){
-    fetch(`${BASE_URL}/months`)
-
-
+function fetchMonths() {
+  fetch(`${BASE_URL}/months`)
     // then returns a promise for this async operation
-    .then(response => response.json())
-       .then(months =>{
-         appState = [...months]
-         console.log("appState", appState)
-        for (let month of months){
-  
-            let m = new Month(month.id, month.name, month.days)
-          let renderedMonths = m.renderMonth();    
-                  let renderedDayss= m.renderDays()   
-          }
-        })
-    }
+    .then((response) => response.json())
+    .then((months) => {
+      appState = [...months];
+      console.log("appState", appState);
+      for (let month of months) {
+        let m = new Month(month.id, month.name, month.days);
+        let renderedMonths = m.renderMonth();
+        let renderedDayss = m.renderDays();
+      }
+    });
+}
 
+function createDaysForm() {
+  let daysDiv = document.getElementById("day-form");
 
-function createDaysForm(){
-    let daysDiv = document.getElementById("day-form")
-        
-    daysDiv.innerHTML += `
+  daysDiv.innerHTML += `
     <form>
          Day of week: <input type="text" id="name"><br><br>
-          Day number: <input type="number" id="priority" min="1" max="30"><br><br>
+          Day number: <input type="number" id="day_number" min="1" max="30"><br><br>
          Task: <input type="text" id="task"><br><br>
          Priority: <input type="number" id="priority" min="1" max="5"><br><br>
          Length: <input type="text" id="length"><br><br>
@@ -55,98 +50,72 @@ function createDaysForm(){
       <input type="submit" value="Create your activity"></input>
     </form>
     `;
-     let daysDivForm = daysDiv.querySelector("form")
-     
-    daysDivForm.addEventListener("submit", daysFormSubmit)
+  let daysDivForm = daysDiv.querySelector("form");
 
+  daysDivForm.addEventListener("submit", daysFormSubmit);
 }
 
+function daysFormSubmit() {
+  event.preventDefault();
 
+  let name = document.getElementById("name").value;
+  let day_number = document.getElementById("day_number").value;
+  let task = document.getElementById("task").value;
+  let priority = document.getElementById("priority").value;
+  let length = document.getElementById("length").value;
+  let month_id = document.getElementById("month_id").value;
+  // gets values and sets = to corresponding days params
+  // debugger
+  let day = {
+    name: name,
+    day_number: day_number,
+    task: task,
+    priority: priority,
+    length: length,
+    month_id: month_id,
+  };
 
-function daysFormSubmit(){
-    event.preventDefault();
-
-    let name = document.getElementById("name").value
-    let day_number = document.getElementById("day_number").value;
-    let task = document.getElementById("task").value
-    let priority = document.getElementById("priority").value
-    let length = document.getElementById("length").value
-    let month_id = document.getElementById("month_id").value
-    // gets values and sets = to corresponding days params
-    // debugger
-    let day = {
-        name: name,
-        day_number: day_number,
-        task: task,
-        priority: priority,
-        length: length,
-        month_id: month_id
-    
-          }
-
-    fetch(`${BASE_URL}/days`, {
-             method: `POST`,
-             headers:{
-                'Content-Type': 'application/json',
-                 'Accept': 'application/json'
-             },
-             body: JSON.stringify(day)
-    })
-    .then(resp => resp.json())
-    .then(day =>{
-        
-        let d = new Day(day.id, day.name, day.day_number, day.task, day.priority, day.length, day.month_id)
-           d.renderDay();
-    })
-
+  fetch(`${BASE_URL}/days`, {
+    method: `POST`,
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(day),
+  })
+    .then((resp) => resp.json())
+    .then((day) => {
+      let d = new Day(
+        day.id,
+        day.name,
+        day.day_number,
+        day.task,
+        day.priority,
+        day.length,
+        day.month_id
+      );
+      window.location.reload()
+      d.renderDay();
+    });
 }
 
-
-
-
-function deleteDay(id){
-    
-    fetch(`${BASE_URL}/days/${id}`, {
-        method: "DELETE",
-        headers:{
-        'Content-Type': 'application/json',
-         'Accept': 'application/json'
-       },
-     })
+function deleteDay(id) {
+  fetch(`${BASE_URL}/days/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  })
     //  thens only run iff the previous operation is succesful and if all thens fails run catch
-    .then(res => res.text())
+    .then((res) => res.text())
     .then(() => console.log("deleted"))
-    .then(() => window.location.reload({forcedReload:true}))
-     .catch(
-         err =>(console.log(err))
-     )
-      
+    .then(() => window.location.reload({ forcedReload: true }))
+    .catch((err) => console.log(err));
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function filterForm(){
-  let monthDivForm = document.getElementById("month-bar")
+function filterForm() {
+  let monthDivForm = document.getElementById("month-bar");
 
   monthDivForm.innerHTML += `
 
@@ -170,307 +139,90 @@ function filterForm(){
   <input type="button" id="newbttn" value="Filter by month"></input>
 
   </form>
-  `
-  
-  // type="button" 
-  // let name = document.getElementById("name").value
-  // let month = {
-  //   name: name
-  //   }
+  `;
 
- let filterFormH = monthDivForm.querySelector('form')
-   input = filterFormH.querySelector("input")
+  let filterFormH = monthDivForm.querySelector("form");
+  input = filterFormH.querySelector("input");
 
- input.addEventListener("click", function() {
-  filterFormSubmit()
-  displayDays()
-  // debugger
-  // monthContainer.querySelector("div")
-   monthContainer = document.getElementById("months-container")
-
-
-  // debugger
-      
-  //  <p>${selectedMonth.days[0].name}</p>  <p>${selectedMonth.days[1].name}</p>
-// debugger
- });
-
+  input.addEventListener("click", function () {
+    filterFormSubmit();
+    displayDays();
+    // debugger
+    // monthContainer.querySelector("div")
+    monthContainer = document.getElementById("months-container");
+  });
 }
 
-
-
-function displayDays(){
+function displayDays() {
   event.preventDefault();
-  monthContainer = document.getElementById("months-container")
-filterFormSubmit()
-       
-    monthContainer.innerHTML =`
+  monthContainer = document.getElementById("months-container");
+  filterFormSubmit();
+
+  monthContainer.innerHTML = `
             <h2><strong>${selectedMonth.name}'s activities</strong></h2>
             <hr>
-          `
-      document.getElementById("day-form").style.visibility = "hidden";
-  if (selectedMonth.days.length > 0){
-    
-    selectedMonth.days.forEach(function(day){
-      monthContainer.innerHTML += `<p> ${day.name} </p><br>  the <p>${day.day_number} </p><br><p> Task:  ${day.task} <p><br>
+          `;
+  document.getElementById("day-form").style.visibility = "hidden";
+  if (selectedMonth.days.length > 0) {
+    selectedMonth.days.forEach(function (day) {
+      monthContainer.innerHTML += `<p> ${day.name}/${day.day_number} </p><br><p> Task:  ${day.task} <p><br>
       <p> Length:  ${day.length} </p><br>
       <p>  Priority: ${day.priority} </p><br>
       <hr>
       `;
-  //  debugger
-    })
+      //  debugger
+    });
     // debugger
-  }
-   else{
+  } else {
     //  debugger
-    
-       monthContainer.innerHTML = `
+
+    monthContainer.innerHTML = `
        <h2>${selectedMonth.name}</h2>
-       <Strong>No days for ${selectedMonth.name} yet!</strong><br>`
-   }
-
-  
+       <Strong>No days for ${selectedMonth.name} yet!</strong><br>`;
+  }
 }
 
-
-function filterFormSubmit(){
- 
+function filterFormSubmit() {
   event.preventDefault();
-  // debugger
-  // monthsCont = document.getElementById("months-container")
-   month_id = document.getElementById("month_name").value
-  
-   if((month_id == 1)){
-    //  debugger
-    selectedMonth = appState[0]
-   return selectedMonth
-   }  else if ((month_id == 2)){
-    selectedMonth = appState[1]
-    return selectedMonth
-   }
-   else if ((month_id == 3)){
-    selectedMonth = appState[2]
-    return selectedMonth
-  }else if ((month_id == 4)){
-    selectedMonth = appState[3]
-    return selectedMonth
-  }else if ((month_id == 5)){
-    selectedMonth = appState[4]
-   return selectedMonth
-  }else if ((month_id == 6)){
-    selectedMonth = appState[5]
-    return selectedMonth
-  }else if ((month_id == 7)){
-    selectedMonth = appState[6]
-   return selectedMonth
-  }else if ((month_id == 8)){
-    selectedMonth = appState[7]
-   return selectedMonth
-  }else if ((month_id == 9)){
-    selectedMonth = appState[8]
-   return selectedMonth
-  }else if ((month_id == 10)){
-    selectedMonth = appState[9]
-   return selectedMonth
-  }else if ((month_id == 11)){
-    selectedMonth = appState[10]
-   return selectedMonth
-  }else if ((month_id == 12)){
-    selectedMonth = appState[11]
-   return selectedMonth
-  }
-  else if ((month_id == 13)){
-   return location.reload();
-  }
+  month_id = document.getElementById("month_name").value;
 
+  if (month_id == 1) {
+    selectedMonth = appState[0];
+    return  selectedMonth;
+  } else if (month_id == 2) {
+    selectedMonth = appState[1];
+    return selectedMonth;
+  } else if (month_id == 3) {
+    selectedMonth = appState[2];
+    return selectedMonth;
+  } else if (month_id == 4) {
+    selectedMonth = appState[3];
+    return selectedMonth;
+  } else if (month_id == 5) {
+    selectedMonth = appState[4];
+    return selectedMonth;
+  } else if (month_id == 6) {
+    selectedMonth = appState[5];
+    return selectedMonth;
+  } else if (month_id == 7) {
+    selectedMonth = appState[6];
+    return selectedMonth;
+  } else if (month_id == 8) {
+    selectedMonth = appState[7];
+    return selectedMonth;
+  } else if (month_id == 9) {
+    selectedMonth = appState[8];
+    return selectedMonth;
+  } else if (month_id == 10) {
+    selectedMonth = appState[9];
+    return selectedMonth;
+  } else if (month_id == 11) {
+    selectedMonth = appState[10];
+    return selectedMonth;
+  } else if (month_id == 12) {
+    selectedMonth = appState[11];
+    return selectedMonth;
+  } else if (month_id == 13) {
+    return location.reload();
+  }
 }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   event.preventDefault();
-
-//   let name = document.getElementById("name").value
-//   let task = document.getElementById("task").value
-//   let priority = document.getElementById("priority").value
-//   let length = document.getElementById("length").value
-//   let month_id = document.getElementById("month_id").value
-//   // gets values and sets = to corresponding days params
-//   // debugger
-//   let day = {
-//       name: name,
-//       task: task,
-//       priority: priority,
-//       length: length,
-//       month_id: month_id
-  
-//         }
-
-//   fetch(`${BASE_URL}/days`, {
-//            method: `POST`,
-//            headers:{
-//               'Content-Type': 'application/json',
-//                'Accept': 'application/json'
-//            },
-//            body: JSON.stringify(day)
-//   })
-//   .then(resp => resp.json())
-//   .then(day =>{
-      
-//       let d = new Day(day.id, day.name, day.task, day.priority, day.length, day.month_id)
-//          d.renderDay();
-//   })
-
-// }
-
-// // function filterBy(id){
-
-// //   fetch(`${BASE_URL}/days/${id}`, {
-// //     method: "SHOW",
-// //     headers:{
-// //     'Content-Type': 'application/json',
-// //      'Accept': 'application/json'
-// //    },
-// //  })
-// //  .then(res => res.text())
-// //     .then(() => console.log("months"))
-// //    debugger
-
-// // }
-
-
-
-
-
-
-
-// function filterForm(){
-//   let monthDivForm = document.getElementById("month-bar")
-
-//   monthDivForm.innerHTML += `
-
-//   <form>
-//   Filter by month: <select id="name" >
-
-//   <option value="January" selected>January</option>
-//   <option value="Febuary">Febuary</option>
-//   <option value="March">March</option>
-//   <option value="April">April</option>
-//   <option value="May">May</option>
-//   <option value="June">June</option>
-//   <option value="July">July</option>
-//   <option value="August">August</option>
-//   <option value="September">September</option>
-//   <option value="October">October</option>
-//   <option value="November">November</option>
-//   <option value="December">December</option> 
-//   <input type="button" id="newbttn" value="Filter by month"></input>
-// </form>
-//   `
- 
-
-
-
-
-
-
-//   document.getElementById("newbttn").onclick = () => {
-//     let select = document.getElementById("name")
-//     let options = getSelectedOptions(select);
-//     debugger
-//        console.log("hello", options);
-//          filterMonths(options)
-//   }
-
-//   function getSelectedOptions(select) {
-//     let result = [];
-//     let options = select.querySelectorAll('option');
-//         //  debugger
-//     console.log("options", options)
-//     for (let i = 0; i < options.length; i++) {
-//         if (options[i].selected)
-//             result.push(options[i].value);
-//     };
-//       console.log("result", result)
-//     return result;
-  
-// }
-
-// }
-
-
-
-// function filterMonths(selectedMonth, selectedDay){
-//   console.log("filterMonths", selectedMonth, selectedDay)
-// debugger
-//   if ( appState.length > 0 ){
-//     appState.map(month =>{
-//       console.log("hello1", month.days) 
-          
-      
-//     })
-//      debugger
-     
-
-
-//     const newMonth = appState.filter(month => {
-//       // month.name === selectedMonth
-//       // debugger
-//       // console.log("?", month)
-//   const  i = month.name === selectedMonth[0]
-//       // console.log("monthname", typeof(month.name), month.name)
-//     let      monthDays = month.days
-    
-    
-
-//     // p = i + monthDays
-//    console.log("days", monthDays)
-//   //  debugger
-      
-//       // console.log("selectedMonth", typeof(selectedMonth[0]), selectedMonth[0])
-//       return i
-//     })
-//   }
-//   // debugger
-
-//   let months = document.getElementById("months-container")
-//   debugger
-//   months.innerHTML = selectedMonth
-
- 
-// }
-
-// //   create dropdown render that month 
-

@@ -41,14 +41,13 @@ class Month {
               //  sets ptags innerhtml to .name
         let  monthDiv = document.querySelector(`[data-link='${day.month_id}']`);
            //   monthDiv.appendChild(ptag)
-           monthDiv.innerHTML +=
-          `
-                 <li> <p> <br>Day of the Week: <br>${day.name} <br><br>
+           monthDiv.innerHTML += `
+                 <li> <p> <br>Day of the Week: <br>${day.name}/${day.day_number}<br><br>
                    Task:${day.task}<br><br> Length:${day.length}<br><br>
                      Priority:${day.priority}<br><br></p></li>
                   <button class="delete-bttn" data-id=${day.id} onclick="deleteDay(${day.id})">Delete ${day.name}</button>
     
-          `     
+          `;     
        }
      }
 
