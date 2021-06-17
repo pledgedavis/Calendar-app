@@ -1,67 +1,11 @@
- 
- /* body { 
-   
-  }  */
- 
- /* h1 {
-    color: black;
-       text-decoration: underline overline;
-       width:10px; 
-     
-  }
-
-   */
-   
-
-  /* li {
-    color: black;
-  
-  } */
-
-  img {
-    width:400px;
-     }
-
-  #day-form{
-    width:400px;
-    border:solid 1px;
-  }
-
-  #months-container {
-    /* color: black;
-    display:block;
-    float:left;
-    width:300px; 
-    height:150px; 
-    padding: 5px;  */
-    /* width:400px;
-    border:solid 1px; */
-    
-  }
-
-  #list-month {
-    /* color: black;
-    display:block;
-    float:left;
-    width:300px; 
-    height:150px; 
-    padding: 5px;  */
-    width:400px;
-    border:solid 1px;
-    
-  }
+#month-bar { text-align: center }
+#months-container { text-align: center }
+#month-form { text-align: center }
+#day-form { text-align: center }
+#days-container { text-align: center }
+#welcome { text-align: center }
 
 
-  /* button {
-   
-    overflow:auto; 
-    width: 150px; 
-    height; */
 
-  /* } */
 
-  /* html {
-    background-image: url("bgdesert.jpg");
-  } */
-/* 
 
