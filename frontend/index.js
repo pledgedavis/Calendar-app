@@ -48,12 +48,24 @@ function createDaysForm() {
       <option value="10">October</option>
       <option value="11">November</option>
       <option value="12">December</option> 
-      <input type="submit" value="Create your activity"></input>
+      <input type="submit" value="Create your activity" ></input>
     </form>
     `;
   let daysDivForm = daysDiv.querySelector("form");
 
   daysDivForm.addEventListener("submit", daysFormSubmit);
+}
+
+function daysFormSubmit2(){
+  event.preventDefault();
+  if (!day){
+  location.reload
+  }
+  else{ 
+  daysFormSubmit
+}
+
+
 }
 
 function daysFormSubmit() {
@@ -95,8 +107,17 @@ function daysFormSubmit() {
         day.length,
         day.month_id
       );
-      window.location.reload()
-      d.renderDay();
+      if (d.day_number == null){
+           alert("PLEASE FILL FORM CORRECTLY!")
+        return false;
+      }
+      else{
+         console.log("IM HERE PLEDGE5", d.id);
+        window.location.reload();
+        d.renderDay();
+      }
+
+      
     });
 }
 

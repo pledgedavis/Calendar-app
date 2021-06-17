@@ -3,9 +3,9 @@
 #month-form { text-align: center }
 #day-form { text-align: center;  
 border-style: double;
-border-left: 6px solid red;
   background-color: lightgrey; }
-#days-container { text-align: center }
+#days-container { text-align: center;}
+
 #welcome { text-align: center; 
 border-style: double;
 border-left: 6px solid red;
