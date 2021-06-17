@@ -9,7 +9,15 @@ border-left: 6px solid red;
 #welcome { text-align: center; 
 border-style: double;
 border-left: 6px solid red;
-  background-color: lightgrey;}
+border-right: 6px solid red;
+background-color: lightgrey;}
+
+  #welcome-pic {border-style: inset;
+ border-width: thick;}
+  .delete-bttn {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  color: red;
+}
 
 
 
