@@ -1,9 +1,17 @@
 #month-bar { text-align: center }
 #months-container { text-align: center }
 #month-form { text-align: center }
-#day-form { text-align: center }
+#day-form { text-align: center;  
+border-style: double;
+border-left: 6px solid red;
+  background-color: lightgrey; }
 #days-container { text-align: center }
-#welcome { text-align: center }
+#welcome { text-align: center; 
+border-style: double;
+border-left: 6px solid red;
+  background-color: lightgrey;}
+
+
 
 
 
