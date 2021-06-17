@@ -17,6 +17,8 @@ class DaysController < ApplicationController
         if day.valid?
          day.save
          render json: day, status: :created, location: day
+        else 
+          flash.alert
        end
      end
 

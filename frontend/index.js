@@ -108,7 +108,7 @@ function daysFormSubmit() {
         day.month_id
       );
       if (d.day_number == null){
-           alert("PLEASE FILL FORM CORRECTLY!")
+           alert("PLEASE FILL FORM OUT CORRECTLY!")
         return false;
       }
       else{
