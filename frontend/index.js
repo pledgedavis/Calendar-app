@@ -27,6 +27,7 @@ function createDaysForm() {
   let daysDiv = document.getElementById("day-form");
 
   daysDiv.innerHTML += `
+  <hr>
     <form>
          Day of week: <input type="text" id="name"><br><br>
           Day number: <input type="number" id="day_number" min="1" max="30"><br><br>

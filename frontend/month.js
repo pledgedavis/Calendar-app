@@ -12,8 +12,8 @@ class Month {
       let monthsDiv = document.getElementById("months-container")
   
     
-      monthsDiv.innerHTML +=
-      `
+      monthsDiv.innerHTML += `
+      <hr>
        <div id="list-month" data-id=${this.id}>
     
          <br>
@@ -25,7 +25,7 @@ class Month {
           </ul>
        </div>
     
-      `
+      `;
     }
 
   
