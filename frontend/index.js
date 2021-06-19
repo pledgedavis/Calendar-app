@@ -56,18 +56,6 @@ function createDaysForm() {
   daysDivForm.addEventListener("submit", daysFormSubmit);
 }
 
-function daysFormSubmit2(){
-  event.preventDefault();
-  if (!day){
-  location.reload
-  }
-  else{ 
-  daysFormSubmit
-}
-
-
-}
-
 function daysFormSubmit() {
   event.preventDefault();
 

@@ -17,7 +17,7 @@ class Month {
        <div id="list-month" data-id=${this.id}>
     
          <br>
-           <h2> <strong> ${this.name}'s activities </strong><h2>
+           <h2> <strong> <u>${this.name}'s activities </u></strong><h2>
          
           <ul id=${this.id} data-link='${this.id}'  >
             <p>  </p> <br>
