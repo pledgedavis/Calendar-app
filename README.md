@@ -3,6 +3,8 @@
 
 Welcome to my Calendar App's Readme to start using my app follow the instructions below..
 
+The purpose of this app is to provide users with a place to store their most important task or least important task on the go.
+
 ## Installation ##
 
 ### Clone the repository ###
