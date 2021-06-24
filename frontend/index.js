@@ -96,7 +96,7 @@ function daysFormSubmit() {
         day.month_id
       );
       if (d.day_number == null){
-           alert("PLEASE FILL FORM OUT CORRECTLY!")
+           alert("PLEASE FILL FORM OUT CORRECTLY! 1. Day of week has to be less than 9 characters!")
         return false;
       }
       else{
